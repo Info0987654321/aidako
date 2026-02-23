@@ -1,6 +1,10 @@
 <div class="blob-content gl-flex gl-w-full gl-flex-col gl-overflow-y-auto"><pre class="code highlight !gl-p-0"><code data-blob-hash="8734431499495818"><span lang="shell" class="line" id="LC1"><span class="c">#!/bin/bash</span></span>
 <span lang="shell" class="line" id="LC2"><span class="nb">sudo </span>adduser <span class="nt">--system</span> <span class="nt">--quiet</span> <span class="nt">--shell</span><span class="o">=</span>/bin/bash <span class="nt">--home</span><span class="o">=</span>/opt/flectra <span class="nt">--gecos</span> <span class="s1">'flectra'</span> <span class="nt">--group</span> flectra</span>
 <span lang="shell" class="line" id="LC3"><span class="nb">sudo mkdir</span> /etc/flectra <span class="o">&amp;&amp;</span> <span class="nb">mkdir</span> /var/log/flectra/</span>
+
+<span lang="shell" class="line" id="LC3"><span class="nb">sudo apt install</span> curl ca-certificates <span class="o">&amp;&amp;</span> <span class="nb">    </span>   </span>
+<span lang="shell" class="line" id="LC3"><span class="nb">sudo install -d</span> /usr/share/postgresql-common/pgdg <span class="o">&amp;&amp;</span> <span class="nb">    </span>   </span>
+ 
 <span lang="shell" class="line" id="LC4"><span class="nb">sudo </span>apt-get update <span class="o">&amp;&amp;</span> <span class="nb">sudo </span>apt-get upgrade <span class="nt">-y</span> <span class="o">&amp;&amp;</span> <span class="nb">sudo </span>apt-get <span class="nb">install </span>postgresql postgresql-server-dev-14 build-essential python3-pillow python3-lxml python3-dev python3-pip python3-setuptools npm nodejs git gdebi libldap2-dev libpq-dev libsasl2-dev libxml2-dev libxslt1-dev libjpeg-dev <span class="nt">-y</span></span>
 <span lang="shell" class="line" id="LC5"><span class="nb">sudo </span>pip3 <span class="nb">install</span> <span class="nt">--upgrade</span> pip</span>
 <span lang="shell" class="line" id="LC6"><span class="nb">sudo </span>service postgresql restart</span>
