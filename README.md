@@ -26,10 +26,9 @@
 __________________________________________________________________________________
 <a>sudo sed -i "s,^\(logfile = \).*,\1"/var/log/flectra/flectra-server.log"," /etc/flectra/flectra.conf</a>
 <a>sudo sed -i "s,^\(logrotate = \).*,\1"True"," /etc/flectra/flectra.conf</a>
-<a>sudo sed -i "s,^\(proxy_mode = \).*,\1"True"," /etc/flectra/flectra.conf</a>  
+<a>sudo sed -i "s,^\(proxy_mode = \).*,\1"True"," /etc/flectra/flectra.conf</a> 
+__________________________________________________________________________________
 <a>sudo cp /opt/flectra/flectra/debian/init /etc/init.d/flectra && chmod +x /etc/init.d/flectra</a>
-<a>sudo ln -s /opt/flectra/flectra/flectra-bin /usr/bin/flectra</a> 
-
 <span lang="shell" class="line" id="LC19"><span class="nb">sudo ln</span> <span class="nt">-s</span> /opt/flectra/flectra/flectra-bin /usr/bin/flectra</span>
 <span lang="shell" class="line" id="LC20"><span class="nb">sudo </span>update-rc.d <span class="nt">-f</span> flectra start 20 2 3 4 5 <span class="nb">.</span></span>
 <span lang="shell" class="line" id="LC21"><span class="nb">sudo </span>service flectra restart</span></code></pre></div>
