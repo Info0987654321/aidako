@@ -25,12 +25,11 @@
 <span lang="shell" class="line" id="LC14"><span class="nb">sudo mv</span> /opt/flectra/.flectrarc /etc/flectra/flectra.conf</span>
 __________________________________________________________________________________
 <span lang="shell" class="line" id="LC14"><span class="nb">sudo sed -i "s,^\(logfile = \).*,\1"/var/log/flectra/flectra-server.log"," /etc/flectra/flectra.conf</span> </span>
+<span lang="shell" class="line" id="LC14"><span class="nb">sudo sed -i "s,^\(logrotate = \).*,\1"True"," /etc/flectra/flectra.conf</span> </span>
+<span lang="shell" class="line" id="LC14"><span class="nb">sudo sed -i "s,^\(proxy_mode = \).*,\1"True"," /etc/flectra/flectra.conf</span> </span>  
+<span lang="shell" class="line" id="LC14"><span class="nb">sudo cp /opt/flectra/flectra/debian/init /etc/init.d/flectra && chmod +x /etc/init.d/flectra</span> </span>
+<span lang="shell" class="line" id="LC14"><span class="nb">sudo ln -s /opt/flectra/flectra/flectra-bin /usr/bin/flectra</span> </span> 
 
-<span lang="shell" class="line" id="LC15"><span class="nb">sudo sed</span> <span class="nt">-i</span> <span class="s2">"s,^</span><span class="se">\(</span><span class="s2">logfile = </span><span class="se">\)</span><span class="s2">.*,</span><span class="se">\1</span><span class="s2">"</span>/var/log/flectra/flectra-server.log<span class="s2">","</span> /etc/flectra/flectra.conf</span>
-
-<span lang="shell" class="line" id="LC16"><span class="nb">sudo sed</span> <span class="nt">-i</span> <span class="s2">"s,^</span><span class="se">\(</span><span class="s2">logrotate = </span><span class="se">\)</span><span class="s2">.*,</span><span class="se">\1</span><span class="s2">"</span>True<span class="s2">","</span> /etc/flectra/flectra.conf</span>
-<span lang="shell" class="line" id="LC17"><span class="nb">sudo sed</span> <span class="nt">-i</span> <span class="s2">"s,^</span><span class="se">\(</span><span class="s2">proxy_mode = </span><span class="se">\)</span><span class="s2">.*,</span><span class="se">\1</span><span class="s2">"</span>True<span class="s2">","</span> /etc/flectra/flectra.conf</span>
-<span lang="shell" class="line" id="LC18"><span class="nb">sudo cp</span> /opt/flectra/flectra/debian/init /etc/init.d/flectra <span class="o">&amp;&amp;</span> <span class="nb">chmod</span> +x /etc/init.d/flectra</span>
 <span lang="shell" class="line" id="LC19"><span class="nb">sudo ln</span> <span class="nt">-s</span> /opt/flectra/flectra/flectra-bin /usr/bin/flectra</span>
 <span lang="shell" class="line" id="LC20"><span class="nb">sudo </span>update-rc.d <span class="nt">-f</span> flectra start 20 2 3 4 5 <span class="nb">.</span></span>
 <span lang="shell" class="line" id="LC21"><span class="nb">sudo </span>service flectra restart</span></code></pre></div>
