@@ -25,7 +25,7 @@
 <span lang="shell" class="line" id="LC14"><span class="nb">sudo mv</span> /opt/flectra/.flectrarc /etc/flectra/flectra.conf</span>
 __________________________________________________________________________________
 <span lang="shell" class="line" id="LC14"><span class="nb">sudo sed -i "s,^\(logfile = \).*,\1"/var/log/flectra/flectra-server.log"," /etc/flectra/flectra.conf</span> </span>
-<span lang="shell" class="line" id="LC14"><span class="nb">sudo sed -i "s,^\(logrotate = \).*,\1"True"," /etc/flectra/flectra.conf</span> </span>
+<a>sudo sed -i "s,^\(logrotate = \).*,\1"True"," /etc/flectra/flectra.conf</a>
 <span lang="shell" class="line" id="LC14"><span class="nb">sudo sed -i "s,^\(proxy_mode = \).*,\1"True"," /etc/flectra/flectra.conf</span> </span>  
 <span lang="shell" class="line" id="LC14"><span class="nb">sudo cp /opt/flectra/flectra/debian/init /etc/init.d/flectra && chmod +x /etc/init.d/flectra</span> </span>
 <span lang="shell" class="line" id="LC14"><span class="nb">sudo ln -s /opt/flectra/flectra/flectra-bin /usr/bin/flectra</span> </span> 
