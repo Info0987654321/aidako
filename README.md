@@ -23,9 +23,11 @@
 <span lang="shell" class="line" id="LC12"><span class="nb">sudo </span>su - postgres <span class="nt">-c</span> <span class="s2">"createuser -s flectra"</span></span>
 <span lang="shell" class="line" id="LC13"><span class="nb">sudo </span>su - flectra <span class="nt">-c</span> <span class="s2">"/opt/flectra/flectra/flectra-bin --addons-path=/opt/flectra/flectra/addons -s --stop-after-init"</span></span>
 <span lang="shell" class="line" id="LC14"><span class="nb">sudo mv</span> /opt/flectra/.flectrarc /etc/flectra/flectra.conf</span>
+__________________________________________________________________________________
+<span lang="shell" class="line" id="LC14"><span class="nb">sudo sed -i "s,^\(logfile = \).*,\1"/var/log/flectra/flectra-server.log"," /etc/flectra/flectra.conf</span> </span>
+
 <span lang="shell" class="line" id="LC15"><span class="nb">sudo sed</span> <span class="nt">-i</span> <span class="s2">"s,^</span><span class="se">\(</span><span class="s2">logfile = </span><span class="se">\)</span><span class="s2">.*,</span><span class="se">\1</span><span class="s2">"</span>/var/log/flectra/flectra-server.log<span class="s2">","</span> /etc/flectra/flectra.conf</span>
 
-____________________________________
 <span lang="shell" class="line" id="LC16"><span class="nb">sudo sed</span> <span class="nt">-i</span> <span class="s2">"s,^</span><span class="se">\(</span><span class="s2">logrotate = </span><span class="se">\)</span><span class="s2">.*,</span><span class="se">\1</span><span class="s2">"</span>True<span class="s2">","</span> /etc/flectra/flectra.conf</span>
 <span lang="shell" class="line" id="LC17"><span class="nb">sudo sed</span> <span class="nt">-i</span> <span class="s2">"s,^</span><span class="se">\(</span><span class="s2">proxy_mode = </span><span class="se">\)</span><span class="s2">.*,</span><span class="se">\1</span><span class="s2">"</span>True<span class="s2">","</span> /etc/flectra/flectra.conf</span>
 <span lang="shell" class="line" id="LC18"><span class="nb">sudo cp</span> /opt/flectra/flectra/debian/init /etc/init.d/flectra <span class="o">&amp;&amp;</span> <span class="nb">chmod</span> +x /etc/init.d/flectra</span>
