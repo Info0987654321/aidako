@@ -2,10 +2,16 @@
 <span lang="shell" class="line" id="LC2"><span class="nb">sudo </span>adduser <span class="nt">--system</span> <span class="nt">--quiet</span> <span class="nt">--shell</span><span class="o">=</span>/bin/bash <span class="nt">--home</span><span class="o">=</span>/opt/flectra <span class="nt">--gecos</span> <span class="s1">'flectra'</span> <span class="nt">--group</span> flectra</span>
 <span lang="shell" class="line" id="LC3"><span class="nb">sudo mkdir</span> /etc/flectra <span class="o">&amp;&amp;</span> <span class="nb">mkdir</span> /var/log/flectra/</span>
 
-<span lang="shell" class="line" id="LC3"><span class="nb">sudo apt install</span> curl ca-certificates <span class="o">&amp;&amp;</span> <span class="nb">    </span>   </span>
-<span lang="shell" class="line" id="LC3"><span class="nb">sudo install -d</span> /usr/share/postgresql-common/pgdg <span class="o">&amp;&amp;</span> <span class="nb">    </span>   </span>
+
+<span lang="shell" class="line" id="LC3"><span class="nb">sudo apt install</span> curl ca-certificates <span class="o"></span> <span class="nb">    </span>   </span>
+<span lang="shell" class="line" id="LC3"><span class="nb">sudo install -d</span> /usr/share/postgresql-common/pgdg <span class="o"></span> <span class="nb">    </span>   </span>
+<span lang="shell" class="line" id="LC3"><span class="nb">sudo curl -o /usr/share/postgresql-common/pgdg/apt.postgresql.org.asc</span> --fail https://www.postgresql.org/media/keys/ACCC4CF8.asc <span class="o"></span> <span class="nb">    </span>   </span>
+<span lang="shell" class="line" id="LC3"><span class="nb">. /etc/os-release</span>       <span class="o"></span> <span class="nb">    </span>   </span>
+<span lang="shell" class="line" id="LC3"><span class="nb">sudo sh -c "echo 'deb [signed-by=/usr/share/postgresql-common/pgdg/apt.postgresql.org.asc] https://apt.postgresql.org/pub/repos/apt $VERSION_CODENAME-pgdg main' > /etc/apt/sources.list.d/pgdg.list"</span> /usr/share/postgresql-common/pgdg <span class="o"></span> <span class="nb">    </span>   </span>
+
+
  
-<span lang="shell" class="line" id="LC4"><span class="nb">sudo </span>apt-get update <span class="o">&amp;&amp;</span> <span class="nb">sudo </span>apt-get upgrade <span class="nt">-y</span> <span class="o">&amp;&amp;</span> <span class="nb">sudo </span>apt-get <span class="nb">install </span>postgresql postgresql-server-dev-14 build-essential python3-pillow python3-lxml python3-dev python3-pip python3-setuptools npm nodejs git gdebi libldap2-dev libpq-dev libsasl2-dev libxml2-dev libxslt1-dev libjpeg-dev <span class="nt">-y</span></span>
+<span lang="shell" class="line" id="LC4"><span class="nb">sudo </span>apt-get update <span class="o">&amp;&amp;</span> <span class="nb">sudo </span>apt-get upgrade <span class="nt">-y</span> <span class="o">&amp;&amp;</span> <span class="nb">sudo </span>apt-get <span class="nb">install </span>postgresql-18 postgresql-server-dev-18 build-essential python3-pillow python3-lxml python3-dev python3-pip python3-setuptools npm nodejs git gdebi libldap2-dev libpq-dev libsasl2-dev libxml2-dev libxslt1-dev libjpeg-dev <span class="nt">-y</span></span>
 <span lang="shell" class="line" id="LC5"><span class="nb">sudo </span>pip3 <span class="nb">install</span> <span class="nt">--upgrade</span> pip</span>
 <span lang="shell" class="line" id="LC6"><span class="nb">sudo </span>service postgresql restart</span>
 <span lang="shell" class="line" id="LC7">git clone <span class="nt">--depth</span><span class="o">=</span>1 <span class="nt">--branch</span><span class="o">=</span>3.0 https://github.com/Aidako20/aidako.git /opt/flectra/flectra</span>
